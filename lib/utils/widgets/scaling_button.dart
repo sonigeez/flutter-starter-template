@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 
 class ScalingButton extends StatefulWidget {
   const ScalingButton({
@@ -17,7 +18,6 @@ class ScalingButton extends StatefulWidget {
 
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
-  // final VoidCallback? onLongPressEnd; void Function(dynamic)
   final Function(dynamic details)? onLongPressEnd;
 
   final bool hapticMediumImpact;
@@ -29,29 +29,26 @@ class ScalingButton extends StatefulWidget {
 class ScalingButtonState extends State<ScalingButton> {
   double _scale = 1.0;
   late double _scaleFactor;
-  final Duration _animationDuration = const Duration(milliseconds: 80);
+  final Duration _animationDuration = 80.ms;
 
-  void _onTapDown(TapDownDetails details) {
+  void _onTapDown(TapDownDetails details) async {
+    if (widget.onTap == null) return;
+
     setState(() {
       _scale = _scaleFactor;
-      if (widget.hapticMediumImpact) {
-        HapticFeedback.lightImpact();
-      } else {
-        HapticFeedback.lightImpact();
-      }
     });
   }
 
   Future<void> _onTapUp(TapUpDetails details) async {
-    Future.delayed(const Duration(milliseconds: 80), () {
+    if (widget.onTap == null) return;
+    Future.delayed(40.ms, () {
       _scale = 1 - (_scaleFactor / 1) + 1;
       if (mounted) {
         setState(() {});
       }
 
-      Future.delayed(const Duration(milliseconds: 80), () {
+      Future.delayed(40.ms, () {
         _scale = 1.0;
-
         if (mounted) {
           setState(() {});
         }
@@ -71,7 +68,9 @@ class ScalingButtonState extends State<ScalingButton> {
       onTapDown: _onTapDown,
       onTapUp: _onTapUp,
       onTap: () {
+        if (widget.onTap == null) return;
         widget.onTap?.call();
+        Haptics.vibrate(HapticsType.soft);
       },
       onLongPress: () {
         setState(() {
