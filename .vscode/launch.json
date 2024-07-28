@@ -1,0 +1,102 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+	  // Patrika Community - Debug
+	  {
+		"name": "Patrika Community (Debug)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_community.dart",
+		"args": ["--flavor", "patrika_community"]
+	  },
+	  // Patrika Community - Profile
+	  {
+		"name": "Patrika Community (Profile)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_community.dart",
+		"args": ["--flavor", "patrika_community", "--profile"]
+	  },
+	  // Patrika Community - Release
+	  {
+		"name": "Patrika Community (Release)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_community.dart",
+		"args": ["--flavor", "patrika_community", "--release"]
+	  },
+	  // Patrika Community Dev - Debug
+	  {
+		"name": "Patrika Community Dev (Debug)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_community_dev.dart",
+		"args": ["--flavor", "patrika_community_dev"]
+	  },
+	  // Patrika Community Dev - Profile
+	  {
+		"name": "Patrika Community Dev (Profile)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_community_dev.dart",
+		"args": ["--flavor", "patrika_community_dev", "--profile"]
+	  },
+	  // Patrika Community Dev - Release
+	  {
+		"name": "Patrika Community Dev (Release)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_community_dev.dart",
+		"args": ["--flavor", "patrika_community_dev", "--release"]
+	  },
+	  // Patrika Support - Debug
+	  {
+		"name": "Patrika Support (Debug)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_support.dart",
+		"args": ["--flavor", "patrika_support"]
+	  },
+	  // Patrika Support - Profile
+	  {
+		"name": "Patrika Support (Profile)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_support.dart",
+		"args": ["--flavor", "patrika_support", "--profile"]
+	  },
+	  // Patrika Support - Release
+	  {
+		"name": "Patrika Support (Release)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_support.dart",
+		"args": ["--flavor", "patrika_support", "--release"]
+	  },
+	  // Patrika Support Dev - Debug
+	  {
+		"name": "Patrika Support Dev (Debug)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_support_dev.dart",
+		"args": ["--flavor", "patrika_support_dev"]
+	  },
+	  // Patrika Support Dev - Profile
+	  {
+		"name": "Patrika Support Dev (Profile)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_support_dev.dart",
+		"args": ["--flavor", "patrika_support_dev", "--profile"]
+	  },
+	  // Patrika Support Dev - Release
+	  {
+		"name": "Patrika Support Dev (Release)",
+		"request": "launch",
+		"type": "dart",
+		"program": "lib/main_patrika_support_dev.dart",
+		"args": ["--flavor", "patrika_support_dev", "--release"]
+	  }
+	]
+  }
+  

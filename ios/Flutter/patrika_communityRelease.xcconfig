@@ -1,0 +1,7 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main_patrika_community.dart
+ASSET_PREFIX=patrika_community
+BUNDLE_NAME=Patrika Community App
+BUNDLE_DISPLAY_NAME=Patrika Community App

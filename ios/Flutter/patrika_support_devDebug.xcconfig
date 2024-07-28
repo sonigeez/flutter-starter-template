@@ -1,0 +1,7 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/main_patrika_support_dev.dart
+ASSET_PREFIX=patrika_support_dev
+BUNDLE_NAME=Patrika Support App - Dev
+BUNDLE_DISPLAY_NAME=Patrika Support App - Dev

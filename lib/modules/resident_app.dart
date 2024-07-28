@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:patrika_community_app/flavors.dart';
 import 'package:patrika_community_app/utils/app_styles.dart';
 import 'package:toastification/toastification.dart';
 import '/utils/router/app_router.dart';
@@ -20,7 +21,7 @@ class _ResidentAppState extends State<ResidentApp> {
   Widget build(BuildContext context) {
     return ToastificationWrapper(
       child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: F.appFlavor != Flavor.patrika_community,
         title: 'Flutter Demo',
         theme: ThemeData(
           brightness: Brightness.light,
