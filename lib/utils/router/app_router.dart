@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
+import 'package:patrika_community_app/modules/onboarding/screens/pending_screen.dart';
 import 'package:patrika_community_app/modules/onboarding/screens/signup_process.dart';
 import 'package:patrika_community_app/modules/onboarding/screens/walkhrough_screen.dart';
+import 'package:patrika_community_app/modules/splash/splash_screen.dart';
 import '/utils/router/app_routes.dart';
 
 class AppRouter {
@@ -10,7 +12,7 @@ class AppRouter {
       GoRoute(
         name: AppRoutes.home,
         path: AppRoutes.home,
-        builder: (context, state) => const WalkthroughScreen(),
+        builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
         name: AppRoutes.walkthrough,
@@ -21,6 +23,11 @@ class AppRouter {
         name: AppRoutes.signup,
         path: AppRoutes.signup,
         builder: (context, state) => const SignupProcess(),
+      ),
+      GoRoute(
+        name: AppRoutes.pending,
+        path: AppRoutes.pending,
+        builder: (context, state) => const PendingScreen(),
       ),
     ],
   );

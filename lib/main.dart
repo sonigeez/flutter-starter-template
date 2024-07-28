@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '/modules/app.dart';
+import 'modules/resident_app.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const ResidentApp());
 }

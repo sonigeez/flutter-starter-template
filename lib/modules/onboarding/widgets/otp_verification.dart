@@ -79,6 +79,9 @@ class OTPVerification extends StatelessWidget {
                   border: Border.all(color: Colors.red, width: 2),
                 ),
               ),
+              onCompleted: (_) {
+                provider.verifyOtp();
+              },
               focusedPinTheme: PinTheme(
                 height: 56,
                 width: 56,
@@ -100,14 +103,14 @@ class OTPVerification extends StatelessWidget {
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),
-                // Resend in 00:20
                 ScalingButton(
                   onTap: () {},
                   child: const Text(
-                    "Resend in 00:20",
+                    "Resend code in 00:20",
                     style: TextStyle(color: Colors.blue),
                   ),
                 ),
+                const SizedBox(height: 12),
               ],
             ),
           ),
@@ -115,7 +118,8 @@ class OTPVerification extends StatelessWidget {
             valueListenable: provider.otpController,
             builder: (context, value, child) {
               return PrimaryButton(
-                onTap: provider.nextPage,
+                isLoading: provider.isLoading,
+                onTap: provider.verifyOtp,
                 // disabled: provider.otpController.text.length != 6,
                 variant: provider.otpController.text.length != 6
                     ? ButtonVariant.disabled

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:patrika_community_app/modules/onboarding/state/signup_process_provider.dart';
-import 'package:patrika_community_app/modules/onboarding/widgets/add_resident.dart';
-import 'package:patrika_community_app/modules/onboarding/widgets/request_admin.dart';
 import 'package:patrika_community_app/utils/widgets/rounded_linear_progress_bar.dart';
+import 'package:patrika_community_app/utils/widgets/scaling_button.dart';
 import 'package:provider/provider.dart';
-import 'package:patrika_community_app/modules/onboarding/widgets/add_home_details.dart';
-import 'package:patrika_community_app/modules/onboarding/widgets/otp_verification.dart';
-import 'package:patrika_community_app/modules/onboarding/widgets/signupform.dart';
 
 class SignupProcess extends StatelessWidget {
   const SignupProcess({super.key});
@@ -22,9 +18,11 @@ class SignupProcess extends StatelessWidget {
           elevation: 0,
           leading: Consumer<SignupProcessProvider>(
             builder: (context, provider, child) {
-              return IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.black),
-                onPressed: provider.previousPage,
+              return ScalingButton(
+                onTap: provider.previousPage,
+                child: Container(
+                    padding: const EdgeInsets.all(12.0),
+                    child: const Icon(Icons.arrow_back, color: Colors.black)),
               );
             },
           ),
@@ -33,7 +31,7 @@ class SignupProcess extends StatelessWidget {
               return TweenAnimationBuilder<double>(
                 tween: Tween<double>(
                   begin: 0,
-                  end: (provider.currentPage + 1) / 5,
+                  end: (provider.currentPage + 1) / provider.widgets.length,
                 ),
                 duration: const Duration(milliseconds: 300),
                 builder: (context, value, child) {
@@ -67,13 +65,7 @@ class SignupProcess extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       controller: provider.pageController,
                       onPageChanged: provider.setCurrentPage,
-                      children: const [
-                        SignupForm(),
-                        OTPVerification(),
-                        AddHomeDetails(),
-                        AddResidents(),
-                        RequestAdminScreen()
-                      ],
+                      children: provider.widgets,
                     );
                   },
                 ),

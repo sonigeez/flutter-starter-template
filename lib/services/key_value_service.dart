@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class KeyValueService {
-  static const String _userKey = 'user_token';
+  static const String _userKey = 'token';
 
   // Setters
   static Future<bool> setUserToken(String user) async {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:patrika_community_app/modules/onboarding/state/signup_process_provider.dart';
 import 'package:patrika_community_app/utils/widgets/buttons/primary_button.dart';
+import 'package:patrika_community_app/utils/widgets/input_field_widget.dart';
 import 'package:provider/provider.dart';
 
 class AddHomeDetails extends StatelessWidget {
@@ -34,27 +35,9 @@ class AddHomeDetails extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            TextFormField(
-              style: const TextStyle(color: Colors.black),
-              decoration: InputDecoration(
-                labelText: 'Flat/House No.',
-                border: const OutlineInputBorder(),
-                focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                ),
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                labelStyle: const TextStyle(color: Colors.black),
-                floatingLabelStyle: MaterialStateTextStyle.resolveWith(
-                  (Set<MaterialState> states) {
-                    final Color color = states.contains(MaterialState.focused)
-                        ? Colors.black
-                        : Colors.grey;
-                    return TextStyle(color: color);
-                  },
-                ),
-              ),
+            InputField(
+              labelText: 'Flat/House No.',
+              keyboardType: TextInputType.number,
               onChanged: provider.updateHouseNumber,
             ),
             const SizedBox(height: 20),

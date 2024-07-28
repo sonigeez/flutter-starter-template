@@ -4,6 +4,8 @@ class InputField extends StatelessWidget {
   final String labelText;
   final TextInputType keyboardType;
   final Widget? prefixIcon;
+  final String value;
+  final int? maxLength;
   final ValueChanged<String>? onChanged;
 
   const InputField({
@@ -12,11 +14,14 @@ class InputField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.prefixIcon,
     this.onChanged,
+    this.maxLength,
+    this.value = '',
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLength: maxLength,
       style: const TextStyle(color: Colors.black),
       decoration: InputDecoration(
         labelText: labelText,

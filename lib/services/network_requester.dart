@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import '/services/logging_service.dart';
 import '/utils/helpers/exception_handler.dart';
@@ -5,19 +7,14 @@ import '/utils/values/app_urls.dart';
 
 class NetworkRequester {
   late Dio _dio;
-  late LoggingService _log;
 
   NetworkRequester._privateConstructor() {
-    _log = LoggingService();
     prepareRequest();
   }
 
   static final NetworkRequester shared = NetworkRequester._privateConstructor();
 
   factory NetworkRequester({LoggingService? log}) {
-    if (log != null) {
-      shared._log = log;
-    }
     return shared;
   }
 
@@ -47,62 +44,60 @@ class NetworkRequester {
 
   void _logNetwork(Object object) {
     if (object is RequestOptions) {
-      _log.info('REQUEST[${object.method}] => PATH: ${object.path}');
-      _log.debug('REQUEST HEADERS: ${object.headers}');
-      _log.debug('REQUEST DATA: ${object.data}');
+      log('REQUEST[${object.method}] => PATH: ${object.path}');
+      log('REQUEST HEADERS: ${object.headers}');
+      log('REQUEST DATA: ${object.data}');
     } else if (object is Response) {
-      _log.info(
-          'RESPONSE[${object.statusCode}] => PATH: ${object.requestOptions.path}');
-      _log.debug('RESPONSE HEADERS: ${object.headers}');
-      _log.debug('RESPONSE DATA: ${object.data}');
+      log('RESPONSE[${object.statusCode}] => PATH: ${object.requestOptions.path}');
+      log('RESPONSE HEADERS: ${object.headers}');
+      log('RESPONSE DATA: ${object.data}');
     } else if (object is DioException) {
-      _log.error(
-          'DIO ERROR[${object.response?.statusCode}]: ${object.message}');
-      _log.error('ERROR STACK TRACE: ${object.stackTrace}');
+      log('DIO ERROR[${object.response?.statusCode}]: ${object.message}');
+      log('ERROR STACK TRACE: ${object.stackTrace}');
     } else {
-      _log.debug(object.toString());
+      log(object.toString());
     }
   }
 
-  Future<dynamic> get({
+  Future<Response> get({
     required String path,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
   }) async {
     try {
-      _log.info('Starting GET request to $path');
+      log('Starting GET request to $path');
       final response = await _dio.get(
         path,
         queryParameters: queryParameters,
         options: Options(headers: headers),
       );
-      _log.info('GET request to $path completed successfully');
-      return response.data;
+      log('GET request to $path completed successfully');
+      return response;
     } on Exception catch (exception) {
-      _log.error('Error in GET request to $path: ${exception.toString()}');
-      return ExceptionHandler.handleError(exception);
+      log('Error in GET request to $path: ${exception.toString()}');
+      throw ExceptionHandler.handleError(exception);
     }
   }
 
-  Future<dynamic> post({
+  Future<Response> post({
     required String path,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? body,
   }) async {
     try {
-      _log.info('Starting POST request to $path');
+      log('Starting POST request to $path');
       final response = await _dio.post(
         path,
         queryParameters: queryParameters,
         data: body,
         options: Options(headers: headers),
       );
-      _log.info('POST request to $path completed successfully');
-      return response.data;
+      log('POST request to $path completed successfully');
+      return response;
     } on Exception catch (exception) {
-      _log.error('Error in POST request to $path: ${exception.toString()}');
-      return ExceptionHandler.handleError(exception);
+      log('Error in POST request to $path: ${exception.toString()}');
+      throw ExceptionHandler.handleError(exception);
     }
   }
 }

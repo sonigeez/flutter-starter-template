@@ -1,12 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:patrika_community_app/modules/onboarding/widgets/add_home_details.dart';
+import 'package:patrika_community_app/modules/onboarding/widgets/add_resident.dart';
+import 'package:patrika_community_app/modules/onboarding/widgets/otp_verification.dart';
+import 'package:patrika_community_app/modules/onboarding/widgets/request_admin.dart';
+import 'package:patrika_community_app/modules/onboarding/widgets/signupform.dart';
+import 'package:patrika_community_app/modules/onboarding/widgets/upload_documents.dart';
+import 'package:patrika_community_app/services/key_value_service.dart';
+import 'package:patrika_community_app/services/network_requester.dart';
+import 'package:patrika_community_app/utils/router/app_router.dart';
+import 'package:patrika_community_app/utils/router/app_routes.dart';
+import 'package:toastification/toastification.dart';
 
 class SignupProcessProvider with ChangeNotifier {
   final PageController pageController = PageController();
+  final NetworkRequester _networkRequester = NetworkRequester.shared;
   int _currentPage = 0;
   String _name = '';
   String _phoneNumber = '';
   String _houseNumber = '';
   String _block = '';
+
+  XFile? _frontPhoto;
+  XFile? _backPhoto;
+
+  final ImagePicker _picker = ImagePicker();
+
+  final widgets = const [
+    SignupForm(),
+    OTPVerification(),
+    UploadDocuments(),
+    AddHomeDetails(),
+    AddResidents(),
+    RequestAdminScreen()
+  ];
 
   final TextEditingController _otpController = TextEditingController();
 
@@ -16,7 +43,135 @@ class SignupProcessProvider with ChangeNotifier {
   String get houseNumber => _houseNumber;
   String get block => _block;
 
+  XFile? get frontPhoto => _frontPhoto;
+  XFile? get backPhoto => _backPhoto;
+
   TextEditingController get otpController => _otpController;
+
+  bool _isLoading = false;
+  bool _signupFailed = false;
+  String _errorMessage = '';
+
+  bool get isLoading => _isLoading;
+  bool get signupFailed => _signupFailed;
+  String get errorMessage => _errorMessage;
+
+  void _setLoading(bool loading) {
+    _isLoading = loading;
+    notifyListeners();
+  }
+
+  void _setSignupFailed(bool failed, [String? message]) {
+    _signupFailed = failed;
+    _errorMessage = message ?? '';
+    notifyListeners();
+  }
+
+  Future<void> getOtp() async {
+    _setLoading(true);
+    _setSignupFailed(false);
+    const path = '/auth/request-otp';
+    final body = {
+      "name": _name,
+      "phone_number": _phoneNumber.replaceAll("+91", '')
+    };
+    const headers = {"Content-Type": "application/json"};
+    try {
+      var res = await _networkRequester.post(
+        path: path,
+        body: body,
+        headers: headers,
+      );
+      if (res.statusCode == 200) {
+        nextPage();
+      } else {
+        _setSignupFailed(true, "Failed to send OTP. Please try again.");
+      }
+    } catch (e) {
+      _setSignupFailed(true, "An error occurred. Please try again.");
+    } finally {
+      _setLoading(false);
+    }
+  }
+
+  // Future<void> verifyOtp() async {
+  //   const path = '/auth/verify-otp';
+  //   final body = {
+  //     "phone_number": _phoneNumber.replaceAll("+91", ''),
+  //     "otp": _otpController.text
+  //   };
+  //   const headers = {"Content-Type": "application/json"};
+  //   var res = await _networkRequester.post(
+  //     path: path,
+  //     body: body,
+  //     headers: headers,
+  //   );
+  //   if (res.statusCode == 200) {
+  //     nextPage();
+  //     KeyValueService.setUserToken(res.data['token']);
+  //   }
+  // }
+  Future<void> verifyOtp() async {
+    _setLoading(true);
+    _setSignupFailed(false);
+    const path = '/auth/verify-otp';
+    final body = {
+      "phone_number": _phoneNumber.replaceAll("+91", ''),
+      "otp": _otpController.text
+    };
+    const headers = {"Content-Type": "application/json"};
+    try {
+      var res = await _networkRequester.post(
+        path: path,
+        body: body,
+        headers: headers,
+      );
+      if (res.statusCode == 200) {
+        nextPage();
+        KeyValueService.setUserToken(res.data['token']);
+      } else {
+        toastification.show(
+          type: ToastificationType.error,
+          style: ToastificationStyle.fillColored,
+          autoCloseDuration: const Duration(seconds: 3),
+          title: const Text("Something went wrong"),
+          // you can also use RichText widget for title and description parameters
+          alignment: Alignment.topRight,
+          direction: TextDirection.ltr,
+          animationDuration: const Duration(milliseconds: 300),
+          animationBuilder: (context, animation, alignment, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+          primaryColor: Colors.red,
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+          margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x07000000),
+              blurRadius: 16,
+              offset: Offset(0, 16),
+              spreadRadius: 0,
+            )
+          ],
+          closeButtonShowType: CloseButtonShowType.onHover,
+          closeOnClick: false,
+          pauseOnHover: true,
+          dragToClose: true,
+        );
+        _setSignupFailed(true, "Failed to verify OTP. Please try again.");
+      }
+    } catch (e) {
+      _setSignupFailed(true, "An error occurred. Please try again.");
+    } finally {
+      _setLoading(false);
+    }
+  }
 
   void nextPage() {
     pageController.nextPage(
@@ -35,6 +190,8 @@ class SignupProcessProvider with ChangeNotifier {
       );
       _currentPage--;
       notifyListeners();
+    } else {
+      AppRouter.router.pop();
     }
   }
 
@@ -61,5 +218,29 @@ class SignupProcessProvider with ChangeNotifier {
   void updateBlock(String block) {
     _block = block;
     notifyListeners();
+  }
+
+  Future<void> pickFrontPhoto() async {
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    _frontPhoto = pickedFile;
+    notifyListeners();
+  }
+
+  Future<void> pickBackPhoto() async {
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    _backPhoto = pickedFile;
+    notifyListeners();
+  }
+
+  Future<void> sendAdminForApproval() async {
+    var token = await KeyValueService.getUserToken();
+    const path = '/onboarding/ask-approval';
+
+    var res = await _networkRequester.post(path: path, headers: {
+      'Authorization': 'Bearer $token',
+    });
+    if (res.statusCode == 200) {
+      AppRouter.router.go(AppRoutes.pending);
+    }
   }
 }

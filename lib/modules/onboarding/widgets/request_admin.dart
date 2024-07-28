@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:patrika_community_app/modules/onboarding/state/signup_process_provider.dart';
 import 'package:patrika_community_app/utils/widgets/buttons/primary_button.dart';
+import 'package:provider/provider.dart';
 
 class RequestAdminScreen extends StatefulWidget {
   const RequestAdminScreen({super.key});
@@ -11,6 +13,7 @@ class RequestAdminScreen extends StatefulWidget {
 class _RequestAdminScreenState extends State<RequestAdminScreen> {
   @override
   Widget build(BuildContext context) {
+    var provider = context.read<SignupProcessProvider>();
     return Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -40,7 +43,11 @@ class _RequestAdminScreenState extends State<RequestAdminScreen> {
             const Spacer(),
             // button
             PrimaryButton(
-              onTap: () {},
+              onTap: () {
+                // navigate to pending requests screen
+                // context.go(AppRoutes.pending);
+                provider.sendAdminForApproval();
+              },
               child: const Text(
                 'Send Admin',
                 style: TextStyle(

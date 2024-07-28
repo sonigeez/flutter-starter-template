@@ -49,21 +49,21 @@ class SignupForm extends StatelessWidget {
               labelText: 'Phone Number',
               keyboardType: TextInputType.phone,
               prefixIcon: const CountryCodePicker(),
+              maxLength: 10,
               onChanged: provider.updatePhoneNumber,
             ),
             const Spacer(),
             Consumer<SignupProcessProvider>(
               builder: (context, provider, child) {
                 return PrimaryButton(
-                  // disabled:
-                  //     provider.name.isEmpty || provider.phoneNumber.isEmpty,
-                  variant: provider.name.isEmpty || provider.phoneNumber.isEmpty
-                      ? ButtonVariant.disabled
-                      : ButtonVariant.primary,
+                  variant:
+                      provider.name.isEmpty || provider.phoneNumber.length != 10
+                          ? ButtonVariant.disabled
+                          : ButtonVariant.primary,
+                  isLoading: provider.isLoading,
                   onTap: () {
-                    // remove focus from otp field
                     FocusScope.of(context).unfocus();
-                    provider.nextPage();
+                    provider.getOtp();
                   },
                   child: const Text(
                     'Get OTP',
