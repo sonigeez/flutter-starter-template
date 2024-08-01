@@ -24,12 +24,11 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> determineNextScreen() async {
     var token = await KeyValueService.getUserToken();
 
-    if (true) {
+    if (token.isEmpty) {
       await Future.delayed(100.ms);
       if (!mounted) return;
       context.push(AppRoutes.walkthrough);
     } else {
-      // get user details from api
       var res = await NetworkRequester.shared.get(
         path: '/auth',
         headers: {
@@ -37,11 +36,16 @@ class _SplashScreenState extends State<SplashScreen> {
         },
       );
       if (!mounted) return;
-
-      if (res.data['user']['user_status'] == 'pending') {
-        context.go(AppRoutes.pending);
-      } else if (res.data['user']['user_status'] == 'initial') {
-        context.go(AppRoutes.walkthrough);
+      if (res.data['user']['user_type'] == 'resident') {
+        if (res.data['user']['user_status'] == 'pending') {
+          context.go(AppRoutes.pending);
+        } else if (res.data['user']['user_status'] == 'initial') {
+          context.go(AppRoutes.walkthrough);
+        }
+      } else if (res.data['user']['user_type'] == 'admin') {
+        context.go(AppRoutes.adminHome);
+      } else if (res.data['user']['user_type'] == 'guard') {
+        context.go(AppRoutes.supportHome);
       }
     }
   }

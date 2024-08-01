@@ -23,6 +23,9 @@ class NetworkRequester {
       baseUrl: AppUrls.prodBackendUrl,
       contentType: Headers.formUrlEncodedContentType,
       responseType: ResponseType.json,
+      validateStatus: (status) {
+        return status! < 500;
+      },
     );
 
     _dio = Dio(dioOptions);

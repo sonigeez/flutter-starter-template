@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:patrika_community_app/flavors.dart';
 
 import 'package:patrika_community_app/modules/onboarding/state/signup_process_provider.dart';
 import 'package:patrika_community_app/utils/widgets/input_field_widget.dart';
@@ -11,6 +12,13 @@ class SignupForm extends StatelessWidget {
     super.key,
   });
 
+  String getHeaderText() {
+    if (F.appFlavor == Flavor.patrika_support) {
+      return "Enter your details";
+    }
+    return "Create Your Resident Profile";
+  }
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<SignupProcessProvider>(context);
@@ -20,24 +28,16 @@ class SignupForm extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              'Create Your Resident Profile',
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'SF Pro',
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-              ),
+            Text(
+              getHeaderText(),
+              style: Theme.of(context).textTheme.displayLarge,
             ),
             const SizedBox(height: 12),
-            const Text(
+            Text(
               'Fill in your details to join your community. Let’s get you started!',
-              style: TextStyle(
-                color: Colors.grey,
-                fontFamily: 'SF Pro',
-                fontWeight: FontWeight.w500,
-                fontSize: 16,
-              ),
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: Colors.grey,
+                  ),
             ),
             const SizedBox(height: 20),
             InputField(

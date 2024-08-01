@@ -1,4 +1,6 @@
 import 'package:go_router/go_router.dart';
+import 'package:patrika_community_app/modules/home-page/admin_home_page.dart';
+import 'package:patrika_community_app/modules/home-page/guard_home_page.dart';
 import 'package:patrika_community_app/modules/onboarding/screens/pending_screen.dart';
 import 'package:patrika_community_app/modules/onboarding/screens/signup_process.dart';
 import 'package:patrika_community_app/modules/onboarding/screens/walkhrough_screen.dart';
@@ -28,6 +30,16 @@ class AppRouter {
         name: AppRoutes.pending,
         path: AppRoutes.pending,
         builder: (context, state) => const PendingScreen(),
+      ),
+      GoRoute(
+        name: AppRoutes.supportHome,
+        path: AppRoutes.supportHome,
+        builder: (context, state) => const GuardHomePage(),
+      ),
+      GoRoute(
+        name: AppRoutes.adminHome,
+        path: AppRoutes.adminHome,
+        builder: (context, state) => const AdminHomePage(),
       ),
     ],
   );

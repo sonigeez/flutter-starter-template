@@ -828,7 +828,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				PRODUCT_NAME = Runner;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "codemagic-provision-profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "patrika-bharat-distro";
 			};
 			name = "Debug-patrika_community";
 		};
@@ -838,7 +838,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				PRODUCT_NAME = Runner;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "codemagic-provision-profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "patrika-bharat-distro";
 			};
 			name = "Profile-patrika_community";
 		};
@@ -848,7 +848,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				PRODUCT_NAME = Runner;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "codemagic-provision-profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "patrika-bharat-distro";
 			};
 			name = "Release-patrika_community";
 		};

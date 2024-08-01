@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:patrika_community_app/flavors.dart';
 import 'package:patrika_community_app/modules/onboarding/widgets/add_home_details.dart';
 import 'package:patrika_community_app/modules/onboarding/widgets/add_resident.dart';
 import 'package:patrika_community_app/modules/onboarding/widgets/otp_verification.dart';
@@ -68,9 +69,10 @@ class SignupProcessProvider with ChangeNotifier {
   }
 
   Future<void> getOtp() async {
+    var isSupportApp = F.appFlavor == Flavor.patrika_support;
     _setLoading(true);
     _setSignupFailed(false);
-    const path = '/auth/request-otp';
+    final path = '/auth/request-otp?is_support_app=$isSupportApp';
     final body = {
       "name": _name,
       "phone_number": _phoneNumber.replaceAll("+91", '')
@@ -84,6 +86,47 @@ class SignupProcessProvider with ChangeNotifier {
       );
       if (res.statusCode == 200) {
         nextPage();
+      } else if (res.statusCode! >= 400) {
+        _setSignupFailed(
+          true,
+          res.data['message'] ??
+              "You are no authorized to use this app. Please contact the admin.",
+        );
+        // show toast
+        toastification.show(
+          type: ToastificationType.error,
+          style: ToastificationStyle.fillColored,
+          autoCloseDuration: const Duration(seconds: 3),
+          title: Text(_errorMessage),
+          // you can also use RichText widget for title and description parameters
+          alignment: Alignment.topRight,
+          direction: TextDirection.ltr,
+          animationDuration: const Duration(milliseconds: 300),
+          animationBuilder: (context, animation, alignment, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+          primaryColor: Colors.red,
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+          margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x07000000),
+              blurRadius: 16,
+              offset: Offset(0, 16),
+              spreadRadius: 0,
+            )
+          ],
+          closeButtonShowType: CloseButtonShowType.onHover,
+          closeOnClick: false,
+          pauseOnHover: true,
+          dragToClose: true,
+        );
       } else {
         _setSignupFailed(true, "Failed to send OTP. Please try again.");
       }
@@ -111,7 +154,16 @@ class SignupProcessProvider with ChangeNotifier {
   //     KeyValueService.setUserToken(res.data['token']);
   //   }
   // }
+  void navigateToSupportHomePage() {
+    AppRouter.router.go(AppRoutes.supportHome);
+  }
+
+  void navigateToAdminHomePage() {
+    AppRouter.router.go(AppRoutes.adminHome);
+  }
+
   Future<void> verifyOtp() async {
+    var isSupportApp = F.appFlavor == Flavor.patrika_support;
     _setLoading(true);
     _setSignupFailed(false);
     const path = '/auth/verify-otp';
@@ -127,6 +179,23 @@ class SignupProcessProvider with ChangeNotifier {
         headers: headers,
       );
       if (res.statusCode == 200) {
+        var userType = res.data['user']['user_type'];
+        if (isSupportApp && userType != 'resident') {
+          if (userType == 'admin') {
+            // go to admin home page
+            navigateToAdminHomePage();
+            // save token
+            KeyValueService.setUserToken(res.data['token']);
+            return;
+          } else if (userType == 'guard') {
+            // go to support home page
+            navigateToSupportHomePage();
+            // save token
+            KeyValueService.setUserToken(res.data['token']);
+            return;
+          }
+        }
+
         nextPage();
         KeyValueService.setUserToken(res.data['token']);
       } else {
