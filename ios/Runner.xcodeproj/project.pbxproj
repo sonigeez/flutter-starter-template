@@ -825,21 +825,30 @@
 		4FA1E5552C5BC7CD004CDDD0 /* Debug-patrika_community */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				PRODUCT_NAME = Runner;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "codemagic-provision-profile";
 			};
 			name = "Debug-patrika_community";
 		};
 		4FA1E5562C5BC7CD004CDDD0 /* Profile-patrika_community */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				PRODUCT_NAME = Runner;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "codemagic-provision-profile";
 			};
 			name = "Profile-patrika_community";
 		};
 		4FA1E5572C5BC7CD004CDDD0 /* Release-patrika_community */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				PRODUCT_NAME = Runner;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "codemagic-provision-profile";
 			};
 			name = "Release-patrika_community";
 		};
