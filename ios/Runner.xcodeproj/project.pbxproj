@@ -542,7 +542,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.community.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.dev;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -608,16 +608,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = GJS8P25Q84;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.patrikaCommunityApp;
+				PRODUCT_BUNDLE_IDENTIFIER = I;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-dev-profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -806,7 +810,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.community.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.dev;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -817,6 +821,174 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release-patrika_community_dev";
+		};
+		4FA1E5552C5BC7CD004CDDD0 /* Debug-patrika_community */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Debug-patrika_community";
+		};
+		4FA1E5562C5BC7CD004CDDD0 /* Profile-patrika_community */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Profile-patrika_community";
+		};
+		4FA1E5572C5BC7CD004CDDD0 /* Release-patrika_community */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Release-patrika_community";
+		};
+		4FA1E5582C5BC7CD004CDDD0 /* Debug-patrika_community_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Debug-patrika_community_dev";
+		};
+		4FA1E5592C5BC7CD004CDDD0 /* Profile-patrika_community_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Profile-patrika_community_dev";
+		};
+		4FA1E55A2C5BC7CD004CDDD0 /* Release-patrika_community_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Release-patrika_community_dev";
+		};
+		4FA1E55B2C5BC7CD004CDDD0 /* Debug-patrika_support */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Debug-patrika_support";
+		};
+		4FA1E55C2C5BC7CD004CDDD0 /* Profile-patrika_support */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Profile-patrika_support";
+		};
+		4FA1E55D2C5BC7CD004CDDD0 /* Release-patrika_support */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Release-patrika_support";
+		};
+		4FA1E55E2C5BC7CD004CDDD0 /* Debug-patrika_support_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Debug-patrika_support_dev";
+		};
+		4FA1E55F2C5BC7CD004CDDD0 /* Profile-patrika_support_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Profile-patrika_support_dev";
+		};
+		4FA1E5602C5BC7CD004CDDD0 /* Release-patrika_support_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Runner;
+			};
+			name = "Release-patrika_support_dev";
+		};
+		4FA1E5612C5BC7CD004CDDD0 /* Debug-patrika_community */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-patrika_community";
+		};
+		4FA1E5622C5BC7CD004CDDD0 /* Profile-patrika_community */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-patrika_community";
+		};
+		4FA1E5632C5BC7CD004CDDD0 /* Release-patrika_community */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-patrika_community";
+		};
+		4FA1E5642C5BC7CD004CDDD0 /* Debug-patrika_community_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-patrika_community_dev";
+		};
+		4FA1E5652C5BC7CD004CDDD0 /* Profile-patrika_community_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-patrika_community_dev";
+		};
+		4FA1E5662C5BC7CD004CDDD0 /* Release-patrika_community_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-patrika_community_dev";
+		};
+		4FA1E5672C5BC7CD004CDDD0 /* Debug-patrika_support */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-patrika_support";
+		};
+		4FA1E5682C5BC7CD004CDDD0 /* Profile-patrika_support */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-patrika_support";
+		};
+		4FA1E5692C5BC7CD004CDDD0 /* Release-patrika_support */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-patrika_support";
+		};
+		4FA1E56A2C5BC7CD004CDDD0 /* Debug-patrika_support_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-patrika_support_dev";
+		};
+		4FA1E56B2C5BC7CD004CDDD0 /* Profile-patrika_support_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-patrika_support_dev";
+		};
+		4FA1E56C2C5BC7CD004CDDD0 /* Release-patrika_support_dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-patrika_support_dev";
 		};
 		5025248A645E9F06E5164D0C /* Release-patrika_support */ = {
 			isa = XCBuildConfiguration;
@@ -1025,7 +1197,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.community;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1097,7 +1269,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.community.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.dev;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -1224,16 +1396,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = GJS8P25Q84;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.patrikaCommunityApp;
+				PRODUCT_BUNDLE_IDENTIFIER = I;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-dev-profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1247,16 +1423,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = GJS8P25Q84;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.patrikaCommunityApp;
+				PRODUCT_BUNDLE_IDENTIFIER = I;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-dev-profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1470,7 +1650,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.community;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1613,7 +1793,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.community;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -1632,6 +1812,18 @@
 				331C8088294A63A400263BE5 /* Debug */,
 				331C8089294A63A400263BE5 /* Release */,
 				331C808A294A63A400263BE5 /* Profile */,
+				4FA1E5612C5BC7CD004CDDD0 /* Debug-patrika_community */,
+				4FA1E5622C5BC7CD004CDDD0 /* Profile-patrika_community */,
+				4FA1E5632C5BC7CD004CDDD0 /* Release-patrika_community */,
+				4FA1E5642C5BC7CD004CDDD0 /* Debug-patrika_community_dev */,
+				4FA1E5652C5BC7CD004CDDD0 /* Profile-patrika_community_dev */,
+				4FA1E5662C5BC7CD004CDDD0 /* Release-patrika_community_dev */,
+				4FA1E5672C5BC7CD004CDDD0 /* Debug-patrika_support */,
+				4FA1E5682C5BC7CD004CDDD0 /* Profile-patrika_support */,
+				4FA1E5692C5BC7CD004CDDD0 /* Release-patrika_support */,
+				4FA1E56A2C5BC7CD004CDDD0 /* Debug-patrika_support_dev */,
+				4FA1E56B2C5BC7CD004CDDD0 /* Profile-patrika_support_dev */,
+				4FA1E56C2C5BC7CD004CDDD0 /* Release-patrika_support_dev */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1664,6 +1856,18 @@
 				97C147061CF9000F007C117D /* Debug */,
 				97C147071CF9000F007C117D /* Release */,
 				249021D4217E4FDB00AE95B9 /* Profile */,
+				4FA1E5552C5BC7CD004CDDD0 /* Debug-patrika_community */,
+				4FA1E5562C5BC7CD004CDDD0 /* Profile-patrika_community */,
+				4FA1E5572C5BC7CD004CDDD0 /* Release-patrika_community */,
+				4FA1E5582C5BC7CD004CDDD0 /* Debug-patrika_community_dev */,
+				4FA1E5592C5BC7CD004CDDD0 /* Profile-patrika_community_dev */,
+				4FA1E55A2C5BC7CD004CDDD0 /* Release-patrika_community_dev */,
+				4FA1E55B2C5BC7CD004CDDD0 /* Debug-patrika_support */,
+				4FA1E55C2C5BC7CD004CDDD0 /* Profile-patrika_support */,
+				4FA1E55D2C5BC7CD004CDDD0 /* Release-patrika_support */,
+				4FA1E55E2C5BC7CD004CDDD0 /* Debug-patrika_support_dev */,
+				4FA1E55F2C5BC7CD004CDDD0 /* Profile-patrika_support_dev */,
+				4FA1E5602C5BC7CD004CDDD0 /* Release-patrika_support_dev */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

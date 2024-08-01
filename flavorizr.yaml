@@ -8,18 +8,18 @@ flavors:
       name: "Patrika Community App"
 
     android:
-      applicationId: "com.aeoscompany.patrika.community"
+      applicationId: "com.aeoscompany.patrika"
     ios:
-      bundleId: "com.aeoscompany.patrika.community"
+      bundleId: "com.aeoscompany.patrika"
 
   patrika_community_dev:
     app:
       name: "Patrika Community App - Dev"
 
     android:
-      applicationId: "com.aeoscompany.patrika.community.dev"
+      applicationId: "com.aeoscompany.patrika.dev"
     ios:
-      bundleId: "com.aeoscompany.patrika.community.dev"
+      bundleId: "com.aeoscompany.patrika.dev"
 
   patrika_support:
     app:
