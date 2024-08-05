@@ -24,6 +24,7 @@ class _ResidentAppState extends State<ResidentApp> {
         debugShowCheckedModeBanner: F.appFlavor != Flavor.patrika_community,
         title: 'Flutter Demo',
         theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
           brightness: Brightness.light,
           primaryColor: Colors.black,
           fontFamily: 'SF Pro',

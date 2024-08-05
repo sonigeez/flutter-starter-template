@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:patrika_community_app/modules/home-page/admin_home_page.dart';
 import 'package:patrika_community_app/modules/home-page/guard_home_page.dart';
+import 'package:patrika_community_app/modules/home-page/resident_home_page.dart';
 import 'package:patrika_community_app/modules/onboarding/screens/pending_screen.dart';
 import 'package:patrika_community_app/modules/onboarding/screens/signup_process.dart';
 import 'package:patrika_community_app/modules/onboarding/screens/walkhrough_screen.dart';
@@ -12,8 +13,8 @@ class AppRouter {
     initialLocation: '/',
     routes: [
       GoRoute(
-        name: AppRoutes.home,
-        path: AppRoutes.home,
+        name: AppRoutes.splash,
+        path: AppRoutes.splash,
         builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
@@ -41,6 +42,10 @@ class AppRouter {
         path: AppRoutes.adminHome,
         builder: (context, state) => const AdminHomePage(),
       ),
+      GoRoute(
+          name: AppRoutes.home,
+          path: AppRoutes.home,
+          builder: (context, state) => const ResidentHomePage()),
     ],
   );
 }

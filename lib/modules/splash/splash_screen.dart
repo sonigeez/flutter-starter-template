@@ -41,6 +41,8 @@ class _SplashScreenState extends State<SplashScreen> {
           context.go(AppRoutes.pending);
         } else if (res.data['user']['user_status'] == 'initial') {
           context.go(AppRoutes.walkthrough);
+        } else if (res.data['user']['user_status'] == 'approved') {
+          context.go(AppRoutes.home);
         }
       } else if (res.data['user']['user_type'] == 'admin') {
         context.go(AppRoutes.adminHome);
