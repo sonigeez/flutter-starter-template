@@ -22,7 +22,7 @@ class F {
         return 'Patrika Support App';
       case Flavor.patrika_support_dev:
         return 'Patrika Support App - Dev';
-      default:
+      case null:
         return 'title';
     }
   }

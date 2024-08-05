@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:patrika_community_app/flavors.dart';
-
 import 'package:patrika_community_app/modules/onboarding/state/signup_process_provider.dart';
+import 'package:patrika_community_app/modules/onboarding/widgets/country_code_picker.dart';
+import 'package:patrika_community_app/utils/widgets/buttons/primary_button.dart';
 import 'package:patrika_community_app/utils/widgets/input_field_widget.dart';
 import 'package:provider/provider.dart';
-import 'package:patrika_community_app/utils/widgets/buttons/primary_button.dart';
-import 'package:patrika_community_app/modules/onboarding/widgets/country_code_picker.dart';
 
 class SignupForm extends StatelessWidget {
   const SignupForm({
@@ -14,16 +13,16 @@ class SignupForm extends StatelessWidget {
 
   String getHeaderText() {
     if (F.appFlavor == Flavor.patrika_support) {
-      return "Enter your details";
+      return 'Enter your details';
     }
-    return "Create Your Resident Profile";
+    return 'Create Your Resident Profile';
   }
 
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<SignupProcessProvider>(context);
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20),
       child: Form(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

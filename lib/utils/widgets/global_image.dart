@@ -4,12 +4,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class GlobalImage extends StatelessWidget {
-  final String path;
-  final double? height;
-  final double? width;
-  final BoxFit fit;
-  final Color? color;
-  final bool isFileImage;
 
   const GlobalImage(
     this.path, {
@@ -20,6 +14,12 @@ class GlobalImage extends StatelessWidget {
     this.color,
     this.isFileImage = false,
   });
+  final String path;
+  final double? height;
+  final double? width;
+  final BoxFit fit;
+  final Color? color;
+  final bool isFileImage;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,8 @@ class GlobalImage extends StatelessWidget {
       return Image.file(File(path), fit: fit, height: height, width: width);
     }
 
-    final bool isLocalImage =
-        (!path.contains("http")) && (!path.contains(".svg"));
+    final isLocalImage =
+        (!path.contains('http')) && (!path.contains('.svg'));
 
     if (isLocalImage) {
       return Image.asset(
@@ -56,7 +56,7 @@ class GlobalImage extends StatelessWidget {
             } catch (e) {
               return const SizedBox.shrink();
             }
-          });
+          },);
     }
   }
 }

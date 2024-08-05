@@ -21,8 +21,8 @@ class SignupProcess extends StatelessWidget {
               return ScalingButton(
                 onTap: provider.previousPage,
                 child: Container(
-                    padding: const EdgeInsets.all(12.0),
-                    child: const Icon(Icons.arrow_back, color: Colors.black)),
+                    padding: const EdgeInsets.all(12),
+                    child: const Icon(Icons.arrow_back, color: Colors.black),),
               );
             },
           ),

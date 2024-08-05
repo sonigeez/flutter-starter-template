@@ -58,21 +58,38 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		013D9BF280CD31A0E1E6DE81 /* Pods-RunnerTests.release-patrika_support_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release-patrika_support_dev.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release-patrika_support_dev.xcconfig"; sourceTree = "<group>"; };
 		03EBC2EA6BF0470AA90BB743 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DFB9CFF72612E1FEC56D99 /* Pods-RunnerTests.release-patrika_community.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release-patrika_community.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release-patrika_community.xcconfig"; sourceTree = "<group>"; };
+		0921B9932025C022D4286901 /* Pods-RunnerTests.debug-patrika_community.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug-patrika_community.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug-patrika_community.xcconfig"; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
+		15A9B45D862682F4070D29C7 /* Pods-Runner.release-patrika_support_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-patrika_support_dev.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-patrika_support_dev.xcconfig"; sourceTree = "<group>"; };
+		1B7224D5771958F324F7042E /* Pods-RunnerTests.profile-patrika_community.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile-patrika_community.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile-patrika_community.xcconfig"; sourceTree = "<group>"; };
+		207BE8D2CFE7C4B108EFFBD3 /* Pods-Runner.debug-patrika_community_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-patrika_community_dev.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-patrika_community_dev.xcconfig"; sourceTree = "<group>"; };
+		2A9F12B44A8BC188203D3B6D /* Pods-Runner.debug-patrika_support.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-patrika_support.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-patrika_support.xcconfig"; sourceTree = "<group>"; };
 		2D6E7274058CD84E81AFA9C8 /* patrika_communityDebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_communityDebug.xcconfig; path = Flutter/patrika_communityDebug.xcconfig; sourceTree = "<group>"; };
 		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		331C8081294A63A400263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		3C60FB00D55F87EC21457A57 /* Pods-RunnerTests.release-patrika_community_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release-patrika_community_dev.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release-patrika_community_dev.xcconfig"; sourceTree = "<group>"; };
+		3D5534161C5F515FA014DB29 /* Pods-RunnerTests.debug-patrika_community_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug-patrika_community_dev.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug-patrika_community_dev.xcconfig"; sourceTree = "<group>"; };
 		3D96C4968352AAAB8D3B579A /* patrika_community_devDebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_community_devDebug.xcconfig; path = Flutter/patrika_community_devDebug.xcconfig; sourceTree = "<group>"; };
 		3DCBA4A225EC160702CD2FFF /* patrika_supportDebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_supportDebug.xcconfig; path = Flutter/patrika_supportDebug.xcconfig; sourceTree = "<group>"; };
+		3E95FCD7405BC4D75051050C /* Pods-RunnerTests.profile-patrika_community_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile-patrika_community_dev.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile-patrika_community_dev.xcconfig"; sourceTree = "<group>"; };
 		4130BA8AB79BC050ED36D8DE /* patrika_community_devProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_community_devProfile.xcconfig; path = Flutter/patrika_community_devProfile.xcconfig; sourceTree = "<group>"; };
 		416E9BBA8D7A7EC87EFE67A2 /* patrika_support_devDebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_support_devDebug.xcconfig; path = Flutter/patrika_support_devDebug.xcconfig; sourceTree = "<group>"; };
+		43EA6C276F1BD897ECA14843 /* Pods-RunnerTests.profile-patrika_support.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile-patrika_support.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile-patrika_support.xcconfig"; sourceTree = "<group>"; };
 		43FA9DAFD300081382BBFFE5 /* patrika_communityProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_communityProfile.xcconfig; path = Flutter/patrika_communityProfile.xcconfig; sourceTree = "<group>"; };
+		44750E733BEEA2375FDBE3E5 /* Pods-Runner.debug-patrika_community.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-patrika_community.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-patrika_community.xcconfig"; sourceTree = "<group>"; };
+		448E5EFB0C851572E9DC6C8E /* Pods-Runner.profile-patrika_community_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile-patrika_community_dev.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile-patrika_community_dev.xcconfig"; sourceTree = "<group>"; };
+		4A105B2CF439F3837B85B0E7 /* Pods-Runner.profile-patrika_support_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile-patrika_support_dev.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile-patrika_support_dev.xcconfig"; sourceTree = "<group>"; };
+		4D668E83322C4042673DE7C6 /* Pods-Runner.profile-patrika_community.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile-patrika_community.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile-patrika_community.xcconfig"; sourceTree = "<group>"; };
 		4F8C7FAF78A61084A4B2F39A /* Pods-RunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		521AA3D4BA7889BAA09ECDDA /* patrika_supportProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_supportProfile.xcconfig; path = Flutter/patrika_supportProfile.xcconfig; sourceTree = "<group>"; };
+		521FB3C47285B91CDA8E7C4F /* Pods-Runner.release-patrika_support.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-patrika_support.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-patrika_support.xcconfig"; sourceTree = "<group>"; };
 		56020E9EF02C54406D150017 /* patrika_community_devLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = patrika_community_devLaunchScreen.storyboard; path = Runner/patrika_community_devLaunchScreen.storyboard; sourceTree = "<group>"; };
+		62A8C4D5A779046C12ADD697 /* Pods-Runner.debug-patrika_support_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-patrika_support_dev.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-patrika_support_dev.xcconfig"; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
@@ -88,15 +105,22 @@
 		9CEB7E0475B8DD9DAE64F8A0 /* patrika_support_devRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_support_devRelease.xcconfig; path = Flutter/patrika_support_devRelease.xcconfig; sourceTree = "<group>"; };
 		A59867675ED1E5CC26A6C40F /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		A893A81CAABC92537E3F016C /* patrika_communityLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = patrika_communityLaunchScreen.storyboard; path = Runner/patrika_communityLaunchScreen.storyboard; sourceTree = "<group>"; };
+		BEEEB4EB6230D22775CE11A9 /* Pods-Runner.release-patrika_community_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-patrika_community_dev.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-patrika_community_dev.xcconfig"; sourceTree = "<group>"; };
 		C125869EEC5A3FCD54F6498D /* Pods_RunnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F962A50D47CA4C2157289A /* patrika_communityRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_communityRelease.xcconfig; path = Flutter/patrika_communityRelease.xcconfig; sourceTree = "<group>"; };
 		C7572CDE298EFBE317F49BEF /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 		CCC85AB3C15EF82CB52644BD /* patrika_supportRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_supportRelease.xcconfig; path = Flutter/patrika_supportRelease.xcconfig; sourceTree = "<group>"; };
+		D0E3E4C81452A2F38E5AA341 /* Pods-RunnerTests.profile-patrika_support_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile-patrika_support_dev.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile-patrika_support_dev.xcconfig"; sourceTree = "<group>"; };
+		D4C0B80549A96F964C6B3544 /* Pods-RunnerTests.debug-patrika_support.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug-patrika_support.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug-patrika_support.xcconfig"; sourceTree = "<group>"; };
 		D947393270DDD3271EC87B37 /* Pods-RunnerTests.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile.xcconfig"; sourceTree = "<group>"; };
+		DAA0C98C8D6B87A9FB2D3359 /* Pods-RunnerTests.release-patrika_support.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release-patrika_support.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release-patrika_support.xcconfig"; sourceTree = "<group>"; };
 		DB71D68E9638E5209913B40D /* Pods-RunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E0E5894C5553971AFEBA1884 /* Pods-Runner.profile-patrika_support.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile-patrika_support.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile-patrika_support.xcconfig"; sourceTree = "<group>"; };
+		E8753965F92727D81A157D21 /* Pods-Runner.release-patrika_community.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-patrika_community.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-patrika_community.xcconfig"; sourceTree = "<group>"; };
 		EAA6FD42B7512FBB8541CB6A /* patrika_support_devLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = patrika_support_devLaunchScreen.storyboard; path = Runner/patrika_support_devLaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF7BE0294DD4D42CA693D434 /* patrika_support_devProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_support_devProfile.xcconfig; path = Flutter/patrika_support_devProfile.xcconfig; sourceTree = "<group>"; };
 		F39813B546CD04FFD4885544 /* patrika_community_devRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = patrika_community_devRelease.xcconfig; path = Flutter/patrika_community_devRelease.xcconfig; sourceTree = "<group>"; };
+		F92F19D108028FAC2A42283B /* Pods-RunnerTests.debug-patrika_support_dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug-patrika_support_dev.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug-patrika_support_dev.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +232,30 @@
 				DB71D68E9638E5209913B40D /* Pods-RunnerTests.debug.xcconfig */,
 				4F8C7FAF78A61084A4B2F39A /* Pods-RunnerTests.release.xcconfig */,
 				D947393270DDD3271EC87B37 /* Pods-RunnerTests.profile.xcconfig */,
+				44750E733BEEA2375FDBE3E5 /* Pods-Runner.debug-patrika_community.xcconfig */,
+				4D668E83322C4042673DE7C6 /* Pods-Runner.profile-patrika_community.xcconfig */,
+				E8753965F92727D81A157D21 /* Pods-Runner.release-patrika_community.xcconfig */,
+				207BE8D2CFE7C4B108EFFBD3 /* Pods-Runner.debug-patrika_community_dev.xcconfig */,
+				448E5EFB0C851572E9DC6C8E /* Pods-Runner.profile-patrika_community_dev.xcconfig */,
+				BEEEB4EB6230D22775CE11A9 /* Pods-Runner.release-patrika_community_dev.xcconfig */,
+				2A9F12B44A8BC188203D3B6D /* Pods-Runner.debug-patrika_support.xcconfig */,
+				E0E5894C5553971AFEBA1884 /* Pods-Runner.profile-patrika_support.xcconfig */,
+				521FB3C47285B91CDA8E7C4F /* Pods-Runner.release-patrika_support.xcconfig */,
+				62A8C4D5A779046C12ADD697 /* Pods-Runner.debug-patrika_support_dev.xcconfig */,
+				4A105B2CF439F3837B85B0E7 /* Pods-Runner.profile-patrika_support_dev.xcconfig */,
+				15A9B45D862682F4070D29C7 /* Pods-Runner.release-patrika_support_dev.xcconfig */,
+				0921B9932025C022D4286901 /* Pods-RunnerTests.debug-patrika_community.xcconfig */,
+				1B7224D5771958F324F7042E /* Pods-RunnerTests.profile-patrika_community.xcconfig */,
+				04DFB9CFF72612E1FEC56D99 /* Pods-RunnerTests.release-patrika_community.xcconfig */,
+				3D5534161C5F515FA014DB29 /* Pods-RunnerTests.debug-patrika_community_dev.xcconfig */,
+				3E95FCD7405BC4D75051050C /* Pods-RunnerTests.profile-patrika_community_dev.xcconfig */,
+				3C60FB00D55F87EC21457A57 /* Pods-RunnerTests.release-patrika_community_dev.xcconfig */,
+				D4C0B80549A96F964C6B3544 /* Pods-RunnerTests.debug-patrika_support.xcconfig */,
+				43EA6C276F1BD897ECA14843 /* Pods-RunnerTests.profile-patrika_support.xcconfig */,
+				DAA0C98C8D6B87A9FB2D3359 /* Pods-RunnerTests.release-patrika_support.xcconfig */,
+				F92F19D108028FAC2A42283B /* Pods-RunnerTests.debug-patrika_support_dev.xcconfig */,
+				D0E3E4C81452A2F38E5AA341 /* Pods-RunnerTests.profile-patrika_support_dev.xcconfig */,
+				013D9BF280CD31A0E1E6DE81 /* Pods-RunnerTests.release-patrika_support_dev.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -618,7 +666,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = I;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-dev-profile";
@@ -824,36 +872,40 @@
 		};
 		4FA1E5552C5BC7CD004CDDD0 /* Debug-patrika_community */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44750E733BEEA2375FDBE3E5 /* Pods-Runner.debug-patrika_community.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				PRODUCT_NAME = Runner;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "patrika-bharat-distro";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-dev-profile";
 			};
 			name = "Debug-patrika_community";
 		};
 		4FA1E5562C5BC7CD004CDDD0 /* Profile-patrika_community */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D668E83322C4042673DE7C6 /* Pods-Runner.profile-patrika_community.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				PRODUCT_NAME = Runner;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "patrika-bharat-distro";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-dev-profile";
 			};
 			name = "Profile-patrika_community";
 		};
 		4FA1E5572C5BC7CD004CDDD0 /* Release-patrika_community */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8753965F92727D81A157D21 /* Pods-Runner.release-patrika_community.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
 				PRODUCT_NAME = Runner;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "patrika-bharat-distro";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-dev-profile";
 			};
 			name = "Release-patrika_community";
 		};
 		4FA1E5582C5BC7CD004CDDD0 /* Debug-patrika_community_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 207BE8D2CFE7C4B108EFFBD3 /* Pods-Runner.debug-patrika_community_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = Runner;
 			};
@@ -861,6 +913,7 @@
 		};
 		4FA1E5592C5BC7CD004CDDD0 /* Profile-patrika_community_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 448E5EFB0C851572E9DC6C8E /* Pods-Runner.profile-patrika_community_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = Runner;
 			};
@@ -868,6 +921,7 @@
 		};
 		4FA1E55A2C5BC7CD004CDDD0 /* Release-patrika_community_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEEEB4EB6230D22775CE11A9 /* Pods-Runner.release-patrika_community_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = Runner;
 			};
@@ -875,6 +929,7 @@
 		};
 		4FA1E55B2C5BC7CD004CDDD0 /* Debug-patrika_support */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A9F12B44A8BC188203D3B6D /* Pods-Runner.debug-patrika_support.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = Runner;
 			};
@@ -882,6 +937,7 @@
 		};
 		4FA1E55C2C5BC7CD004CDDD0 /* Profile-patrika_support */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0E5894C5553971AFEBA1884 /* Pods-Runner.profile-patrika_support.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = Runner;
 			};
@@ -889,6 +945,7 @@
 		};
 		4FA1E55D2C5BC7CD004CDDD0 /* Release-patrika_support */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 521FB3C47285B91CDA8E7C4F /* Pods-Runner.release-patrika_support.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = Runner;
 			};
@@ -896,6 +953,7 @@
 		};
 		4FA1E55E2C5BC7CD004CDDD0 /* Debug-patrika_support_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62A8C4D5A779046C12ADD697 /* Pods-Runner.debug-patrika_support_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = Runner;
 			};
@@ -903,6 +961,7 @@
 		};
 		4FA1E55F2C5BC7CD004CDDD0 /* Profile-patrika_support_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A105B2CF439F3837B85B0E7 /* Pods-Runner.profile-patrika_support_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = Runner;
 			};
@@ -910,6 +969,7 @@
 		};
 		4FA1E5602C5BC7CD004CDDD0 /* Release-patrika_support_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15A9B45D862682F4070D29C7 /* Pods-Runner.release-patrika_support_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = Runner;
 			};
@@ -917,6 +977,7 @@
 		};
 		4FA1E5612C5BC7CD004CDDD0 /* Debug-patrika_community */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0921B9932025C022D4286901 /* Pods-RunnerTests.debug-patrika_community.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -924,6 +985,7 @@
 		};
 		4FA1E5622C5BC7CD004CDDD0 /* Profile-patrika_community */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7224D5771958F324F7042E /* Pods-RunnerTests.profile-patrika_community.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -931,6 +993,7 @@
 		};
 		4FA1E5632C5BC7CD004CDDD0 /* Release-patrika_community */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04DFB9CFF72612E1FEC56D99 /* Pods-RunnerTests.release-patrika_community.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -938,6 +1001,7 @@
 		};
 		4FA1E5642C5BC7CD004CDDD0 /* Debug-patrika_community_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D5534161C5F515FA014DB29 /* Pods-RunnerTests.debug-patrika_community_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -945,6 +1009,7 @@
 		};
 		4FA1E5652C5BC7CD004CDDD0 /* Profile-patrika_community_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E95FCD7405BC4D75051050C /* Pods-RunnerTests.profile-patrika_community_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -952,6 +1017,7 @@
 		};
 		4FA1E5662C5BC7CD004CDDD0 /* Release-patrika_community_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C60FB00D55F87EC21457A57 /* Pods-RunnerTests.release-patrika_community_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -959,6 +1025,7 @@
 		};
 		4FA1E5672C5BC7CD004CDDD0 /* Debug-patrika_support */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4C0B80549A96F964C6B3544 /* Pods-RunnerTests.debug-patrika_support.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -966,6 +1033,7 @@
 		};
 		4FA1E5682C5BC7CD004CDDD0 /* Profile-patrika_support */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43EA6C276F1BD897ECA14843 /* Pods-RunnerTests.profile-patrika_support.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -973,6 +1041,7 @@
 		};
 		4FA1E5692C5BC7CD004CDDD0 /* Release-patrika_support */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAA0C98C8D6B87A9FB2D3359 /* Pods-RunnerTests.release-patrika_support.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -980,6 +1049,7 @@
 		};
 		4FA1E56A2C5BC7CD004CDDD0 /* Debug-patrika_support_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F92F19D108028FAC2A42283B /* Pods-RunnerTests.debug-patrika_support_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -987,6 +1057,7 @@
 		};
 		4FA1E56B2C5BC7CD004CDDD0 /* Profile-patrika_support_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0E3E4C81452A2F38E5AA341 /* Pods-RunnerTests.profile-patrika_support_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -994,6 +1065,7 @@
 		};
 		4FA1E56C2C5BC7CD004CDDD0 /* Release-patrika_support_dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 013D9BF280CD31A0E1E6DE81 /* Pods-RunnerTests.release-patrika_support_dev.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = RunnerTests;
 			};
@@ -1415,7 +1487,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = I;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-dev-profile";
@@ -1442,7 +1514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = I;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-dev-profile";

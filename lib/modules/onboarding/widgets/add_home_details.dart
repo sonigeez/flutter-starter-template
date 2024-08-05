@@ -11,7 +11,7 @@ class AddHomeDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<SignupProcessProvider>(builder: (context, provider, child) {
       return Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -47,7 +47,7 @@ class AddHomeDetails extends StatelessWidget {
                 labelText: 'Block/Wing (optional)',
                 border: const OutlineInputBorder(),
                 focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
+                  
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.grey),
@@ -55,7 +55,7 @@ class AddHomeDetails extends StatelessWidget {
                 labelStyle: const TextStyle(color: Colors.black),
                 floatingLabelStyle: MaterialStateTextStyle.resolveWith(
                   (Set<MaterialState> states) {
-                    final Color color = states.contains(MaterialState.focused)
+                    final color = states.contains(MaterialState.focused)
                         ? Colors.black
                         : Colors.grey;
                     return TextStyle(color: color);
@@ -86,6 +86,6 @@ class AddHomeDetails extends StatelessWidget {
           ],
         ),
       );
-    });
+    },);
   }
 }

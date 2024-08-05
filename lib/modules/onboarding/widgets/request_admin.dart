@@ -13,9 +13,9 @@ class RequestAdminScreen extends StatefulWidget {
 class _RequestAdminScreenState extends State<RequestAdminScreen> {
   @override
   Widget build(BuildContext context) {
-    var provider = context.read<SignupProcessProvider>();
+    final provider = context.read<SignupProcessProvider>();
     return Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -43,11 +43,7 @@ class _RequestAdminScreenState extends State<RequestAdminScreen> {
             const Spacer(),
             // button
             PrimaryButton(
-              onTap: () {
-                // navigate to pending requests screen
-                // context.go(AppRoutes.pending);
-                provider.sendAdminForApproval();
-              },
+              onTap: provider.sendAdminForApproval,
               child: const Text(
                 'Send Admin',
                 style: TextStyle(
@@ -70,6 +66,6 @@ class _RequestAdminScreenState extends State<RequestAdminScreen> {
             ),
             const SizedBox(height: 40),
           ],
-        ));
+        ),);
   }
 }

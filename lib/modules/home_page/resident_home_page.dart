@@ -35,9 +35,8 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
           padding: const EdgeInsets.only(bottom: 16),
           children: [
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
@@ -60,13 +59,13 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12),
               child: Row(
                 children: features.map((feature) {
                   return Expanded(
                     child: Container(
                       height: 162,
-                      margin: const EdgeInsets.all(8.0),
+                      margin: const EdgeInsets.all(8),
                       padding: const EdgeInsets.symmetric(
                         horizontal: 8,
                         vertical: 16,
@@ -74,7 +73,7 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
                       decoration: BoxDecoration(
                         color: const Color(0xffFCFCFC),
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: Colors.grey[300]!, width: 1),
+                        border: Border.all(color: Colors.grey[300]!),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +126,7 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
           ),
           BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Community'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_bag), label: 'Buy/Sell'),
+              icon: Icon(Icons.shopping_bag), label: 'Buy/Sell',),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
@@ -233,7 +232,7 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
           'Our Diwali event was a blast with vibrant decorations, delicious food, and joyous moments.\n\nThanks to everyone who made it special!',
           'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
           additionalImages: [
-            'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80'
+            'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
           ],
         ),
       ],
@@ -255,7 +254,7 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
       decoration: BoxDecoration(
         color: const Color(0xffFCFCFC),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey[300]!, width: 1),
+        border: Border.all(color: Colors.grey[300]!),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -286,12 +285,12 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.network(imageUrl,
-                height: 200, width: double.infinity, fit: BoxFit.cover),
+                height: 200, width: double.infinity, fit: BoxFit.cover,),
           ),
           if (additionalImages != null && additionalImages.isNotEmpty)
             Row(
               children: [
-                for (var img in additionalImages)
+                for (final img in additionalImages)
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(4),
@@ -308,7 +307,7 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
           Row(
             children: [
               IconButton(
-                  icon: const Icon(Icons.favorite_border), onPressed: () {}),
+                  icon: const Icon(Icons.favorite_border), onPressed: () {},),
               IconButton(icon: const Icon(Icons.share), onPressed: () {}),
             ],
           ),

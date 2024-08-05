@@ -18,7 +18,7 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
     'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
     'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
     'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
-    'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
+    'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80',
   ];
 
   late PageController _pageController;
@@ -26,7 +26,7 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(initialPage: 0);
+    _pageController = PageController();
   }
 
   @override
@@ -40,7 +40,7 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               Expanded(
@@ -60,12 +60,9 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
                 controller: _pageController,
                 count: 6,
                 effect: const SlideEffect(
-                  spacing: 8.0,
-                  radius: 100.0,
-                  dotWidth: 8.0,
-                  dotHeight: 8.0,
-                  dotColor: Colors.grey,
-                  activeDotColor: Colors.indigo,
+                  radius: 100,
+                  dotWidth: 8,
+                  dotHeight: 8,
                 ),
               ),
               const SizedBox(height: 20),
@@ -74,7 +71,7 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
                   context.push(AppRoutes.signup);
                 },
                 child: Text(
-                  "Get Started",
+                  'Get Started',
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
@@ -86,7 +83,7 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Already have an account?",
+                    'Already have an account?',
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontWeight: FontWeight.w500,
                           letterSpacing: 0.1,
@@ -94,12 +91,12 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
                         ),
                   ),
                   Text(
-                    " Login",
+                    ' Login',
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontWeight: FontWeight.w500,
                           color: Theme.of(context).primaryColor,
                         ),
-                  )
+                  ),
                 ],
               ),
             ],

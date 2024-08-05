@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:patrika_community_app/modules/onboarding/state/signup_process_provider.dart';
-import 'package:provider/provider.dart';
 import 'package:patrika_community_app/utils/widgets/buttons/primary_button.dart';
 import 'package:patrika_community_app/utils/widgets/scaling_button.dart';
+import 'package:provider/provider.dart';
 
 class UploadDocuments extends StatelessWidget {
   const UploadDocuments({super.key});
@@ -16,12 +16,12 @@ class UploadDocuments extends StatelessWidget {
     final signupProvider = Provider.of<SignupProcessProvider>(context);
 
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           const Text(
-            "Upload your documents",
+            'Upload your documents',
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
@@ -58,10 +58,7 @@ class UploadDocuments extends StatelessWidget {
             onTap: signupProvider.frontPhoto == null ||
                     signupProvider.backPhoto == null
                 ? null
-                : () {
-                    // Handle the submit action
-                    signupProvider.nextPage();
-                  },
+                : signupProvider.nextPage,
             variant: signupProvider.frontPhoto == null ||
                     signupProvider.backPhoto == null
                 ? ButtonVariant.disabled
@@ -82,18 +79,14 @@ class UploadDocuments extends StatelessWidget {
 }
 
 class PhotoUploadRow extends StatelessWidget {
+
+  const PhotoUploadRow({
+    required this.frontPhoto, required this.backPhoto, required this.onPickFrontPhoto, required this.onPickBackPhoto, super.key,
+  });
   final XFile? frontPhoto;
   final XFile? backPhoto;
   final VoidCallback onPickFrontPhoto;
   final VoidCallback onPickBackPhoto;
-
-  const PhotoUploadRow({
-    super.key,
-    required this.frontPhoto,
-    required this.backPhoto,
-    required this.onPickFrontPhoto,
-    required this.onPickBackPhoto,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -125,14 +118,12 @@ class PhotoUploadRow extends StatelessWidget {
 }
 
 class UploadPhotoContainer extends StatelessWidget {
-  final XFile? photo;
-  final String placeholderText;
 
   const UploadPhotoContainer({
-    super.key,
-    required this.photo,
-    required this.placeholderText,
+    required this.photo, required this.placeholderText, super.key,
   });
+  final XFile? photo;
+  final String placeholderText;
 
   @override
   Widget build(BuildContext context) {

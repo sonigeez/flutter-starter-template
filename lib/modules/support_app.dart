@@ -64,7 +64,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var flavor = F.appFlavor;
+    final flavor = F.appFlavor;
     return Scaffold(
       body: Center(
         child: Text(

@@ -15,7 +15,7 @@ class _PendingScreenState extends State<PendingScreen> {
         // Request Pending
 // Our admin team is currently reviewing your documents. Approval may take up to 48-72 hours. You will be notified once your verification is complete.
         child: Padding(
-          padding: EdgeInsets.all(32.0),
+          padding: EdgeInsets.all(32),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

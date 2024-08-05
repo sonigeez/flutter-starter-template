@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_dynamic_calls
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:patrika_community_app/flavors.dart';
@@ -33,7 +35,7 @@ class SignupProcessProvider with ChangeNotifier {
     UploadDocuments(),
     AddHomeDetails(),
     AddResidents(),
-    RequestAdminScreen()
+    RequestAdminScreen(),
   ];
 
   final TextEditingController _otpController = TextEditingController();
@@ -56,6 +58,8 @@ class SignupProcessProvider with ChangeNotifier {
   bool get isLoading => _isLoading;
   bool get signupFailed => _signupFailed;
   String get errorMessage => _errorMessage;
+  final String _unAuthText =
+      'You are not authorized to use this app. Please contact the admin.';
 
   void _setLoading(bool loading) {
     _isLoading = loading;
@@ -69,17 +73,17 @@ class SignupProcessProvider with ChangeNotifier {
   }
 
   Future<void> getOtp() async {
-    var isSupportApp = F.appFlavor == Flavor.patrika_support;
+    final isSupportApp = F.appFlavor == Flavor.patrika_support;
     _setLoading(true);
     _setSignupFailed(false);
     final path = '/auth/request-otp?is_support_app=$isSupportApp';
     final body = {
-      "name": _name,
-      "phone_number": _phoneNumber.replaceAll("+91", '')
+      'name': _name,
+      'phone_number': _phoneNumber.replaceAll('+91', ''),
     };
-    const headers = {"Content-Type": "application/json"};
+    const headers = {'Content-Type': 'application/json'};
     try {
-      var res = await _networkRequester.post(
+      final res = await _networkRequester.post(
         path: path,
         body: body,
         headers: headers,
@@ -89,8 +93,10 @@ class SignupProcessProvider with ChangeNotifier {
       } else if (res.statusCode! >= 400) {
         _setSignupFailed(
           true,
-          res.data['message'] ??
-              "You are no authorized to use this app. Please contact the admin.",
+          (res.data is Map<String, dynamic>
+                  ? (res.data as Map<String, dynamic>)['message'] as String?
+                  : null) ??
+              _unAuthText,
         );
         // show toast
         toastification.show(
@@ -98,7 +104,6 @@ class SignupProcessProvider with ChangeNotifier {
           style: ToastificationStyle.fillColored,
           autoCloseDuration: const Duration(seconds: 3),
           title: Text(_errorMessage),
-          // you can also use RichText widget for title and description parameters
           alignment: Alignment.topRight,
           direction: TextDirection.ltr,
           animationDuration: const Duration(milliseconds: 300),
@@ -119,8 +124,7 @@ class SignupProcessProvider with ChangeNotifier {
               color: Color(0x07000000),
               blurRadius: 16,
               offset: Offset(0, 16),
-              spreadRadius: 0,
-            )
+            ),
           ],
           closeButtonShowType: CloseButtonShowType.onHover,
           closeOnClick: false,
@@ -128,10 +132,10 @@ class SignupProcessProvider with ChangeNotifier {
           dragToClose: true,
         );
       } else {
-        _setSignupFailed(true, "Failed to send OTP. Please try again.");
+        _setSignupFailed(true, 'Failed to send OTP. Please try again.');
       }
     } catch (e) {
-      _setSignupFailed(true, "An error occurred. Please try again.");
+      _setSignupFailed(true, 'An error occurred. Please try again.');
     } finally {
       _setLoading(false);
     }
@@ -163,48 +167,47 @@ class SignupProcessProvider with ChangeNotifier {
   }
 
   Future<void> verifyOtp() async {
-    var isSupportApp = F.appFlavor == Flavor.patrika_support;
+    final isSupportApp = F.appFlavor == Flavor.patrika_support;
     _setLoading(true);
     _setSignupFailed(false);
     const path = '/auth/verify-otp';
     final body = {
-      "phone_number": _phoneNumber.replaceAll("+91", ''),
-      "otp": _otpController.text
+      'phone_number': _phoneNumber.replaceAll('+91', ''),
+      'otp': _otpController.text,
     };
-    const headers = {"Content-Type": "application/json"};
+    const headers = {'Content-Type': 'application/json'};
     try {
-      var res = await _networkRequester.post(
+      final res = await _networkRequester.post(
         path: path,
         body: body,
         headers: headers,
       );
       if (res.statusCode == 200) {
-        var userType = res.data['user']['user_type'];
+        final userType = res.data['user']['user_type'];
         if (isSupportApp && userType != 'resident') {
           if (userType == 'admin') {
             // go to admin home page
             navigateToAdminHomePage();
             // save token
-            KeyValueService.setUserToken(res.data['token']);
+            await KeyValueService.setUserToken(res.data['token'] as String);
             return;
           } else if (userType == 'guard') {
             // go to support home page
             navigateToSupportHomePage();
             // save token
-            KeyValueService.setUserToken(res.data['token']);
+            await KeyValueService.setUserToken(res.data['token'] as String);
             return;
           }
         }
 
         nextPage();
-        KeyValueService.setUserToken(res.data['token']);
+        await KeyValueService.setUserToken(res.data['token'] as String);
       } else {
         toastification.show(
           type: ToastificationType.error,
           style: ToastificationStyle.fillColored,
           autoCloseDuration: const Duration(seconds: 3),
-          title: const Text("Something went wrong"),
-          // you can also use RichText widget for title and description parameters
+          title: const Text('Something went wrong'),
           alignment: Alignment.topRight,
           direction: TextDirection.ltr,
           animationDuration: const Duration(milliseconds: 300),
@@ -225,18 +228,17 @@ class SignupProcessProvider with ChangeNotifier {
               color: Color(0x07000000),
               blurRadius: 16,
               offset: Offset(0, 16),
-              spreadRadius: 0,
-            )
+            ),
           ],
           closeButtonShowType: CloseButtonShowType.onHover,
           closeOnClick: false,
           pauseOnHover: true,
           dragToClose: true,
         );
-        _setSignupFailed(true, "Failed to verify OTP. Please try again.");
+        _setSignupFailed(true, 'Failed to verify OTP. Please try again.');
       }
     } catch (e) {
-      _setSignupFailed(true, "An error occurred. Please try again.");
+      _setSignupFailed(true, 'An error occurred. Please try again.');
     } finally {
       _setLoading(false);
     }
@@ -302,12 +304,15 @@ class SignupProcessProvider with ChangeNotifier {
   }
 
   Future<void> sendAdminForApproval() async {
-    var token = await KeyValueService.getUserToken();
+    final token = await KeyValueService.getUserToken();
     const path = '/onboarding/ask-approval';
 
-    var res = await _networkRequester.post(path: path, headers: {
-      'Authorization': 'Bearer $token',
-    });
+    final res = await _networkRequester.post(
+      path: path,
+      headers: {
+        'Authorization': 'Bearer $token',
+      },
+    );
     if (res.statusCode == 200) {
       AppRouter.router.go(AppRoutes.pending);
     }

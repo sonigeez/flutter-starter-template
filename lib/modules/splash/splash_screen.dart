@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_dynamic_calls
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
@@ -16,20 +18,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(150.ms, () {
-      determineNextScreen();
-    });
+    Future.delayed(150.ms, determineNextScreen);
   }
 
   Future<void> determineNextScreen() async {
-    var token = await KeyValueService.getUserToken();
+    final token = await KeyValueService.getUserToken();
 
     if (token.isEmpty) {
-      await Future.delayed(100.ms);
+      await Future<void>.delayed(100.ms);
       if (!mounted) return;
-      context.push(AppRoutes.walkthrough);
+      await context.push(AppRoutes.walkthrough);
     } else {
-      var res = await NetworkRequester.shared.get(
+      final res = await NetworkRequester.shared.get(
         path: '/auth',
         headers: {
           'Authorization': 'Bearer $token',

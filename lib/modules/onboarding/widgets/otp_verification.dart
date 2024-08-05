@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:patrika_community_app/modules/onboarding/state/signup_process_provider.dart';
-import 'package:patrika_community_app/utils/widgets/scaling_button.dart';
-import 'package:provider/provider.dart';
 import 'package:patrika_community_app/utils/widgets/buttons/primary_button.dart';
+import 'package:patrika_community_app/utils/widgets/scaling_button.dart';
 import 'package:pinput/pinput.dart';
+import 'package:provider/provider.dart';
 
 class OTPVerification extends StatelessWidget {
   const OTPVerification({
@@ -15,6 +15,8 @@ class OTPVerification extends StatelessWidget {
     final provider = context.watch<SignupProcessProvider>();
     const fillColor = Color.fromRGBO(243, 246, 249, 0);
     const borderColor = Colors.black54;
+    const heroText = 'Enter the OTP sent to your phone number to complete the '
+        'verification and access your community.';
 
     final defaultPinTheme = PinTheme(
       width: 56,
@@ -36,7 +38,7 @@ class OTPVerification extends StatelessWidget {
     );
 
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -51,7 +53,7 @@ class OTPVerification extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           const Text(
-            'Enter the OTP sent to your phone number to complete the verification and access your community.',
+            heroText,
             style: TextStyle(
               color: Colors.grey,
               fontFamily: 'SF Pro',
@@ -66,10 +68,8 @@ class OTPVerification extends StatelessWidget {
             child: Pinput(
               length: 6,
               controller: provider.otpController,
-              closeKeyboardWhenCompleted: true,
               animationCurve: Curves.easeOutBack,
               autofocus: true,
-              keyboardType: TextInputType.number,
               defaultPinTheme: defaultPinTheme,
               errorPinTheme: PinTheme(
                 height: 56,
@@ -87,7 +87,7 @@ class OTPVerification extends StatelessWidget {
                 width: 56,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.black, width: 2),
+                  border: Border.all(width: 2),
                 ),
               ),
             ),
@@ -106,7 +106,7 @@ class OTPVerification extends StatelessWidget {
                 ScalingButton(
                   onTap: () {},
                   child: const Text(
-                    "Resend code in 00:20",
+                    'Resend code in 00:20',
                     style: TextStyle(color: Colors.blue),
                   ),
                 ),

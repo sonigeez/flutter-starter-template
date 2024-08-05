@@ -22,24 +22,24 @@ class _AddResidentsState extends State<AddResidents> {
       clipBehavior: Clip.none,
       children: [
         Padding(
-          padding: const EdgeInsets.all(16.0).copyWith(bottom: 0),
+          padding: const EdgeInsets.all(16).copyWith(bottom: 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 'Add Residents',
                 style: TextStyle(
-                  fontSize: 24.0,
+                  fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
-              const SizedBox(height: 12.0),
+              const SizedBox(height: 12),
               const Text(
                 'Enter the names & phone numbers of all residents in your flat to complete your profile.',
-                style: TextStyle(fontSize: 16.0),
+                style: TextStyle(fontSize: 16),
               ),
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 20),
               Expanded(
                 child: ListView.builder(
                   itemCount: residents.length,
@@ -52,7 +52,7 @@ class _AddResidentsState extends State<AddResidents> {
                   },
                 ),
               ),
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 20),
             ],
           ),
         ),
@@ -62,7 +62,7 @@ class _AddResidentsState extends State<AddResidents> {
           left: 0,
           right: 0,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 32)
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32)
                 .copyWith(bottom: 40),
             // white gradient
             decoration: BoxDecoration(
@@ -86,7 +86,7 @@ class _AddResidentsState extends State<AddResidents> {
                 provider.nextPage();
               },
               child: const Text(
-                "Save & Continue",
+                'Save & Continue',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
@@ -101,26 +101,24 @@ class _AddResidentsState extends State<AddResidents> {
 }
 
 class Resident {
+  Resident({this.name = '', this.phoneNumber = ''});
   String name;
   String phoneNumber;
-
-  Resident({this.name = '', this.phoneNumber = ''});
 }
 
 class ResidentForm extends StatelessWidget {
-  final Resident resident;
-  final int index;
-
   const ResidentForm({
-    super.key,
     required this.resident,
     required this.index,
+    super.key,
   });
+  final Resident resident;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -133,7 +131,7 @@ class ResidentForm extends StatelessWidget {
           const InputField(
             labelText: 'Full Name',
           ),
-          const SizedBox(height: 20.0),
+          const SizedBox(height: 20),
           const InputField(
             labelText: 'Phone Number (optional)',
             keyboardType: TextInputType.phone,

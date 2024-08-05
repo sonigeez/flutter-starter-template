@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
-  final String labelText;
-  final TextInputType keyboardType;
-  final Widget? prefixIcon;
-  final String value;
-  final int? maxLength;
-  final ValueChanged<String>? onChanged;
 
   const InputField({
-    super.key,
-    required this.labelText,
+    required this.labelText, super.key,
     this.keyboardType = TextInputType.text,
     this.prefixIcon,
     this.onChanged,
     this.maxLength,
     this.value = '',
   });
+  final String labelText;
+  final TextInputType keyboardType;
+  final Widget? prefixIcon;
+  final String value;
+  final int? maxLength;
+  final ValueChanged<String>? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class InputField extends StatelessWidget {
         prefixIcon: prefixIcon,
         border: const OutlineInputBorder(),
         focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.black),
+          
         ),
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.grey),
@@ -36,7 +35,7 @@ class InputField extends StatelessWidget {
         labelStyle: const TextStyle(color: Colors.black),
         floatingLabelStyle: MaterialStateTextStyle.resolveWith(
           (Set<MaterialState> states) {
-            final Color color = states.contains(MaterialState.focused)
+            final color = states.contains(MaterialState.focused)
                 ? Colors.black
                 : Colors.grey;
             return TextStyle(color: color);

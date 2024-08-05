@@ -2,7 +2,7 @@ import 'package:logger/logger.dart';
 
 class LoggingService {
   final Logger _logger = Logger(
-    printer: PrettyPrinter(methodCount: 2, colors: true, printEmojis: true),
+    printer: PrettyPrinter(),
   );
 
   void debug(String message) => _logger.d(message);

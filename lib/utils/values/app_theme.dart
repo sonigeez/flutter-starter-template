@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppTheme extends ChangeNotifier {
-  static final _instance = AppTheme._();
+
+  factory AppTheme() {
+    return _instance;
+  }
 
   AppTheme._();
+  static final _instance = AppTheme._();
 
   ThemeMode _themeMode = ThemeMode.light;
 
@@ -51,8 +55,4 @@ class AppTheme extends ChangeNotifier {
           ),
         ),
       );
-
-  factory AppTheme() {
-    return _instance;
-  }
 }

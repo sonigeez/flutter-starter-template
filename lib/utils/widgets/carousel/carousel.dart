@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Carousel extends StatefulWidget {
-  final List<String> imgList;
 
-  const Carousel({super.key, required this.imgList});
+  const Carousel({required this.imgList, super.key});
+  final List<String> imgList;
 
   @override
   State<Carousel> createState() => _CarouselState();
@@ -17,7 +17,7 @@ class _CarouselState extends State<Carousel> {
   void initState() {
     super.initState();
     _controller.addListener(() {
-      int next = _controller.page!.round();
+      final next = _controller.page!.round();
       if (_currentPage != next) {
         setState(() {
           _currentPage = next;
@@ -62,8 +62,8 @@ class _CarouselState extends State<Carousel> {
   Widget _buildIndicator(bool isActive) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      margin: const EdgeInsets.symmetric(horizontal: 5.0),
-      height: 10.0,
+      margin: const EdgeInsets.symmetric(horizontal: 5),
+      height: 10,
       width: isActive ? 12.0 : 8.0,
       decoration: BoxDecoration(
         color: isActive ? Colors.blue : Colors.grey,

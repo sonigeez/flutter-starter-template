@@ -10,9 +10,8 @@ enum ButtonVariant { primary, secondary, disabled }
 
 class PrimaryButton extends StatefulWidget {
   const PrimaryButton({
-    super.key,
+    required this.child, super.key,
     this.onTap,
-    required this.child,
     this.variant = ButtonVariant.primary,
     this.isLoading = false,
   });
@@ -41,7 +40,6 @@ class _PrimaryButtonState extends State<PrimaryButton> {
           borderRadius: BorderRadius.circular(48),
           border: Border.all(
             color: _getBorderColor(),
-            width: 1,
           ),
           boxShadow:
               widget.variant == ButtonVariant.primary && !widget.isLoading
@@ -50,8 +48,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
                         color: Colors.black.withOpacity(0.2),
                         blurRadius: 8,
                         offset: const Offset(0, 8),
-                        spreadRadius: 0,
-                      )
+                      ),
                     ]
                   : null,
         ),
@@ -109,17 +106,15 @@ class _PrimaryButtonState extends State<PrimaryButton> {
 }
 
 class LoadingSpinner extends StatelessWidget {
+  const LoadingSpinner({
+    required this.strokeWidth, required this.valueColor, super.key,
+  });
   final double strokeWidth;
   final Color valueColor;
-  const LoadingSpinner({
-    super.key,
-    required this.strokeWidth,
-    required this.valueColor,
-  });
 
   @override
   Widget build(BuildContext context) {
-    var isIos = Platform.isIOS;
+    final isIos = Platform.isIOS;
     return isIos
         ? CupertinoActivityIndicator(
             color: valueColor,

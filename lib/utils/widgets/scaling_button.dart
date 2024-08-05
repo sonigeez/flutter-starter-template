@@ -4,8 +4,8 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 
 class ScalingButton extends StatefulWidget {
   const ScalingButton({
-    super.key,
     required this.child,
+    super.key,
     this.onTap,
     this.scaleFactor = 0.96,
     this.hapticMediumImpact = true,
@@ -18,7 +18,8 @@ class ScalingButton extends StatefulWidget {
 
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
-  final Function(dynamic details)? onLongPressEnd;
+
+  final void Function(dynamic details)? onLongPressEnd;
 
   final bool hapticMediumImpact;
 
@@ -27,11 +28,11 @@ class ScalingButton extends StatefulWidget {
 }
 
 class ScalingButtonState extends State<ScalingButton> {
-  double _scale = 1.0;
+  double _scale = 1;
   late double _scaleFactor;
   final Duration _animationDuration = 80.ms;
 
-  void _onTapDown(TapDownDetails details) async {
+  Future<void> _onTapDown(TapDownDetails details) async {
     if (widget.onTap == null) return;
 
     setState(() {
@@ -57,7 +58,7 @@ class ScalingButtonState extends State<ScalingButton> {
   }
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     _scaleFactor = widget.scaleFactor;
   }
