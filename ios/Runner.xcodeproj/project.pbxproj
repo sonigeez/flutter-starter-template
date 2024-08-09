@@ -931,7 +931,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2A9F12B44A8BC188203D3B6D /* Pods-Runner.debug-patrika_support.xcconfig */;
 			buildSettings = {
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.support;
 				PRODUCT_NAME = Runner;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-patrika-support";
 			};
 			name = "Debug-patrika_support";
 		};
@@ -939,7 +942,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E0E5894C5553971AFEBA1884 /* Pods-Runner.profile-patrika_support.xcconfig */;
 			buildSettings = {
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.support;
 				PRODUCT_NAME = Runner;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-patrika-support";
 			};
 			name = "Profile-patrika_support";
 		};
@@ -947,7 +953,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 521FB3C47285B91CDA8E7C4F /* Pods-Runner.release-patrika_support.xcconfig */;
 			buildSettings = {
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H45G2YB7C4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aeoscompany.patrika.support;
 				PRODUCT_NAME = Runner;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "bharat-patrika-support";
 			};
 			name = "Release-patrika_support";
 		};

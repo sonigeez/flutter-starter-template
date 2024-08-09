@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:patrika_community_app/utils/router/app_routes.dart';
+import 'package:patrika_community_app/utils/router/app_router.dart';
 import 'package:patrika_community_app/utils/widgets/buttons/primary_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

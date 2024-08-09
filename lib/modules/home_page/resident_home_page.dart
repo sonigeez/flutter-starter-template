@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:patrika_community_app/utils/app_styles.dart';
 import 'package:patrika_community_app/utils/helpers/generate_random_light_colors.dart';
+import 'package:patrika_community_app/utils/router/app_router.dart';
 import 'package:patrika_community_app/utils/widgets/refresh_header.dart';
+import 'package:patrika_community_app/utils/widgets/scaling_button.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 class ResidentHomePage extends StatefulWidget {
@@ -35,6 +38,12 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
   Future<void> _onRefresh() async {
     await Future<void>.delayed(const Duration(milliseconds: 1000));
     _refreshController.refreshCompleted();
+  }
+
+  void _handleOnTap(Map<String, String> feature, BuildContext context) {
+    if (feature['title'] == 'Pre-Approve\nGuests') {
+      context.push(AppRoutes.preApproveResident);
+    }
   }
 
   @override
@@ -77,46 +86,52 @@ class _ResidentHomePageState extends State<ResidentHomePage> {
                 child: Row(
                   children: features.map((feature) {
                     return Expanded(
-                      child: Container(
-                        height: 162,
-                        margin: const EdgeInsets.all(8),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 16,
-                        ),
-                        decoration: BoxDecoration(
-                          color: const Color(0xffFCFCFC),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.grey[300]!),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.network(
-                                  feature['imageUrl']!,
-                                  height: 20,
-                                  width: double.infinity,
-                                  fit: BoxFit.cover,
+                      child: ScalingButton(
+                        scaleFactor: 0.99,
+                        onTap: () {
+                          _handleOnTap(feature, context);
+                        },
+                        child: Container(
+                          height: 162,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 16,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFCFCFC),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.grey[300]!),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.network(
+                                    feature['imageUrl']!,
+                                    height: 20,
+                                    width: double.infinity,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(height: 8),
-                            Center(
-                              child: Text(
-                                feature['title']!,
-                                style: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontFamily: 'SF Pro',
-                                  fontWeight: FontWeight.w400,
+                              const SizedBox(height: 8),
+                              Center(
+                                child: Text(
+                                  feature['title']!,
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'SF Pro',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
-                                textAlign: TextAlign.center,
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     );

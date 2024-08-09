@@ -3,3 +3,5 @@ linter:
   rules:
     public_member_api_docs: false
     lines_longer_than_80_chars: false
+    camel_case_types: 
+    non_constant_identifier_names: false

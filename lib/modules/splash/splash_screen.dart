@@ -5,7 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:patrika_community_app/services/key_value_service.dart';
 import 'package:patrika_community_app/services/network_requester.dart';
-import 'package:patrika_community_app/utils/router/app_routes.dart';
+import 'package:patrika_community_app/utils/router/app_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

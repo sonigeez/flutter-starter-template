@@ -12,7 +12,6 @@ import 'package:patrika_community_app/modules/onboarding/widgets/upload_document
 import 'package:patrika_community_app/services/key_value_service.dart';
 import 'package:patrika_community_app/services/network_requester.dart';
 import 'package:patrika_community_app/utils/router/app_router.dart';
-import 'package:patrika_community_app/utils/router/app_routes.dart';
 import 'package:toastification/toastification.dart';
 
 class SignupProcessProvider with ChangeNotifier {
@@ -170,7 +169,7 @@ class SignupProcessProvider with ChangeNotifier {
     final isSupportApp = F.appFlavor == Flavor.patrika_support;
     _setLoading(true);
     _setSignupFailed(false);
-    const path = '/auth/verify-otp';
+    final path = '/auth/verify-otp?is_support_app=$isSupportApp';
     final body = {
       'phone_number': _phoneNumber.replaceAll('+91', ''),
       'otp': _otpController.text,
@@ -198,6 +197,16 @@ class SignupProcessProvider with ChangeNotifier {
             await KeyValueService.setUserToken(res.data['token'] as String);
             return;
           }
+        }
+
+        // check if user is already logged in
+        if (userType == 'resident' &&
+            res.data['user']['user_status'] == 'approved') {
+          // go to home page
+          navigateToHomePage();
+          // save token
+          await KeyValueService.setUserToken(res.data['token'] as String);
+          return;
         }
 
         nextPage();
@@ -242,6 +251,10 @@ class SignupProcessProvider with ChangeNotifier {
     } finally {
       _setLoading(false);
     }
+  }
+
+  void navigateToHomePage() {
+    AppRouter.router.go(AppRoutes.home);
   }
 
   void nextPage() {
