@@ -1,6 +1,6 @@
 class AppUrls {
   static const String prodBackendUrl =
-      'https://23ab-49-204-73-22.ngrok-free.app';
+      "https://qikuygrnehwznbegbckclcnbie0afqdi.lambda-url.ap-south-1.on.aws";
   static const String testBackendUrl =
-      'https://23ab-49-204-73-22.ngrok-free.app';
+      "https://qikuygrnehwznbegbckclcnbie0afqdi.lambda-url.ap-south-1.on.aws";
 }
