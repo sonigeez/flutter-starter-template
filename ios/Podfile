@@ -5,9 +5,18 @@
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 project 'Runner', {
-  'Debug' => :debug,
-  'Profile' => :release,
-  'Release' => :release,
+  'Debug-patrika_community' => :debug,
+  'Profile-patrika_community' => :release,
+  'Release-patrika_community' => :release,
+  'Debug-patrika_community_dev' => :debug,
+  'Profile-patrika_community_dev' => :release,
+  'Release-patrika_community_dev' => :release,
+  'Debug-patrika_support' => :debug,
+  'Profile-patrika_support' => :release,
+  'Release-patrika_support' => :release,
+  'Debug-patrika_support_dev' => :debug,
+  'Profile-patrika_support_dev' => :release,
+  'Release-patrika_support_dev' => :release,
 }
 
 def flutter_root

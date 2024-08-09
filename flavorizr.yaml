@@ -1,0 +1,42 @@
+app:
+  android:
+    flavorDimensions: "flavor-type"
+
+flavors:
+  patrika_community:
+    app:
+      name: "Patrika Community App"
+
+    android:
+      applicationId: "com.aeoscompany.patrika"
+    ios:
+      bundleId: "com.aeoscompany.patrika"
+
+  patrika_community_dev:
+    app:
+      name: "Patrika Community App - Dev"
+
+    android:
+      applicationId: "com.aeoscompany.patrika.dev"
+    ios:
+      bundleId: "com.aeoscompany.patrika.dev"
+
+  patrika_support:
+    app:
+      name: "Patrika Support App"
+
+    android:
+      applicationId: "com.aeoscompany.patrika.support"
+    ios:
+      bundleId: "com.aeoscompany.patrika.support"
+
+  patrika_support_dev:
+    app:
+      name: "Patrika Support App - Dev"
+
+    android:
+      applicationId: "com.aeoscompany.patrika.support.dev"
+    ios:
+      bundleId: "com.aeoscompany.patrika.support.dev"
+
+ide: idea

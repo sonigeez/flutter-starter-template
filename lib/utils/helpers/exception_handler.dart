@@ -1,12 +1,13 @@
+// ignore_for_file: always_declare_return_types, type_annotate_public_apis, inference_failure_on_function_return_type
+
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import '/utils/helpers/error_message.dart';
+import 'package:patrika_community_app/utils/helpers/error_message.dart';
 
 class APIException implements Exception {
-  final String message;
-
   APIException({required this.message});
+  final String message;
 }
 
 class ExceptionHandler {
@@ -21,8 +22,15 @@ class ExceptionHandler {
           return APIException(message: ErrorMessages.connectionTimeout);
         case DioExceptionType.badResponse:
           return APIException(message: ErrorMessages.networkGeneral);
-
-        default:
+        case DioExceptionType.cancel:
+          return APIException(message: ErrorMessages.networkGeneral);
+        case DioExceptionType.receiveTimeout:
+          return APIException(message: ErrorMessages.networkGeneral);
+        case DioExceptionType.sendTimeout:
+          return APIException(message: ErrorMessages.networkGeneral);
+        case DioExceptionType.badCertificate:
+          return APIException(message: ErrorMessages.networkGeneral);
+        case DioExceptionType.unknown:
           if (error.error is SocketException) {
             return APIException(
               message: ErrorMessages.networkGeneral,
@@ -44,6 +52,6 @@ class ErrorHandler {
   }
 
   static displayError(String? error) {
-    // todo show snackbar
+    // TODOshow snackbar
   }
 }

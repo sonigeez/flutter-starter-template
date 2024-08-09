@@ -1,6 +1,7 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import '/modules/app.dart';
+import 'package:patrika_community_app/modules/resident_app.dart';
 
-void main() {
-  runApp(const App());
+FutureOr<void> main() async {
+  runApp(const ResidentApp());
 }
